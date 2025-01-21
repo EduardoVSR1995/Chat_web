@@ -1,6 +1,0 @@
-@apiSockte_HostAddress = http://localhost:5299
-
-GET {{apiSockte_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###
