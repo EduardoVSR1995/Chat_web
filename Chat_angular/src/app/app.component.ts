@@ -33,7 +33,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.list = [];
 
   this.connection = new HubConnectionBuilder()
-  .withUrl('http://localhost:5000/conect')
+  .withUrl('http://localhost/api/conect')
   .withAutomaticReconnect()
   .configureLogging(LogLevel.Information)
   .withHubProtocol(new JsonHubProtocol())

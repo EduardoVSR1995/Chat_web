@@ -1,0 +1,44 @@
+version: '3.9'
+
+services:
+  angular:
+    container_name: front_angular
+    build:
+      context: ./Chat_angular
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    volumes:
+      - ./angular-app:/app
+    depends_on:
+      - api_net
+    networks:
+      - chat-network
+
+  react:
+    container_name: front_react
+    build:
+      context: ./Chat_react
+      dockerfile: Dockerfile
+    ports:
+      - "3000:80"
+    volumes:
+      - ./react-app:/app
+    depends_on:
+      - api_net
+    networks:
+      - chat-network
+
+  api_net:
+    container_name: api_net
+    build:
+      context: ./Api_net
+      dockerfile: Dockerfile
+    ports:
+      - "80:8080"
+    networks:
+      - chat-network
+
+networks:
+  chat-network:
+    driver: bridge

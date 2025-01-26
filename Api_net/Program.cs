@@ -29,9 +29,9 @@ app.UseHttpsRedirection();
 app.UseRouting();
 app.UseCors();
 
-app.MapHub<ConectSockt>("/conect");
+app.MapHub<ConectSockt>("/api/conect");
 
-app.Run(builder.Configuration["host"]);
+app.Run();
 
 public class ConectSockt : Hub
 {

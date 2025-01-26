@@ -10,7 +10,7 @@ function App() {
   
   useEffect(() => {
     const newConnection = new HubConnectionBuilder()
-      .withUrl('http://localhost:5000/conect')
+      .withUrl('http://localhost/api/conect')
       .withAutomaticReconnect()
       .configureLogging(LogLevel.Information)
       .withHubProtocol(new JsonHubProtocol())
